@@ -32,10 +32,7 @@ class CalendarsController < ApplicationController
     7.times do |x|
       current_date = @today + x
       today_plans = plans[current_date]&.map(&:plan) || []
-      wday_num = current_date.wday
-      days = { month: current_date.month, date: current_date.day, plans: today_plans, wday: wdays[wday_num] }
       @week_days.push(days)
     end
-
   end
 end
